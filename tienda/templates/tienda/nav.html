@@ -1,0 +1,38 @@
+{% load static %}
+<nav class="navbar navbar-expand-lg navbar-light bg-white py-lg-2 sticky-top">
+  <a class="navbar-brand" href="{% url 'tienda:index' %}">
+    <img src="{% static 'img/tererelibroslogo.jpg' %}"  width="150" height="60"  class="d-inline-block align-top py-8" alt="">
+  </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item {% if request.path == '/' %}active{% endif %}">
+          <a class="nav-link" href="{% url 'tienda:index' %}">INICIO <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item {% if request.path == '/cronica/1/' %}active{% endif %}">
+          <a class="nav-link" href="{% url 'tienda:cronica' categoria_id=1 %}">CRÓNICA</a>
+        </li>
+        <li class="nav-item {% if request.path == '/ensayo/3/' %}active{% endif %}">
+          <a class="nav-link" href="{% url 'tienda:ensayo' categoria_id=3 %}">ENSAYO <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item {% if request.path == '/narrativa/2/' %}active{% endif %}">
+          <a class="nav-link" href="{% url 'tienda:narrativa' categoria_id=2 %}">NARRATIVA</a>
+        </li>
+        <li class="nav-item {% if request.path == '/poesia/4/' %}active{% endif %}">
+          <a class="nav-link" href="{% url 'tienda:poesia' categoria_id=4 %}">POESÍA</a>
+        </li>
+        <li class="nav-item {% if request.path == '/blog' %}active{% endif %}">
+          <a class="nav-link" href="{% url 'tienda:blog' %}">BLOG</a>
+        </li>
+        <li class="nav-item {% if request.path == '/tererelibros' %}active{% endif %}">
+          <a class="nav-link" href="{% url 'tienda:terere' %}">TERERÉ LIBROS</a>
+        </li>
+        <li class="nav-item {% if request.path == '/contacto' %}active{% endif %}">
+          <a class="nav-link" href="{% url 'tienda:contacto' %}">CONTACTO</a>
+        </li>
+      </ul>
+      
+    </div>
+  </nav>

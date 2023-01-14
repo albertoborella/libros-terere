@@ -1,0 +1,17 @@
+{% extends 'tienda/base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block content %}
+{% include 'tienda/nav.html' %}
+<div class="caja-contacto" style="margin-top: 80px;">
+    <form action="" class="formulario_contacto" method="POST">
+        <h2>Contáctanos</h2>
+        {% csrf_token %}
+        {{ form|crispy}}
+        <button type="submit" class="btn btn-primary btn-block">Enviar</button>
+    </form>
+    {{ mensaje }}
+    <img src="{% static 'img/tererelibroslogo.jpg' %}" alt="" style="width: 100%;">
+</div>
+<br>
+{% endblock %}

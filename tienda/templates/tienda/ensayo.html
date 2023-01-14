@@ -1,0 +1,69 @@
+{% extends 'tienda/base.html' %}
+{% load static %}
+{% block title %}|Ensayos{% endblock %}
+{% block content %}
+{% include 'tienda/nav.html' %}
+<div class="categoria-ensayo">
+    <h1 style="text-align: center;
+    font-size: 50px;
+    color: white;
+    padding-top: 20px;
+    font-weight: 900;">
+     ENSAYO
+    </h1>
+</div>
+<div style="background-color: white;">
+    <div class="container">
+        <div class="row" style="margin: auto;">
+          <div class="col-sm-12 columnas">
+      {% for libro in libros_ensayo %}
+      <section class="personas">
+          <div class="contenedor">
+            <article class="persona__columna">
+              <img src="{{libro.tapa.url}}">
+              <div class="capa">
+                <p>{{libro.titulo}}</p>
+              </div>
+            </article>
+          </div>
+          <div class="col text-center">
+            <a href="{% url 'tienda:libro' libro.id %}" class="btn btn-info btn-sm">Ver más</a>
+          </div>
+        </section>
+        {% endfor %}
+      </div>
+      </div>
+    </div>
+    <br>
+    {% include 'tienda/footer.html' %}
+    <!-- <div class="footer-ensayo">
+      <div class="grupo-1">
+        <div class="box">
+          <figure>
+            <a href="#">
+              <h2>Libros Tereré</h2>
+              <p>Valencia - España</p>
+            </a>
+          </figure>
+        </div>
+        <div class="box">
+          <h2>Contáctame</h2>
+        </div>
+        <div class="box">
+          <h2>Síguenos</h2>
+          <div class="red-social">
+            <a href="#"><i class="bi bi-facebook"></i></a>
+            <a href="#"><i class="bi bi-instagram"></i></a>
+            <a href="#"><i class="bi bi-whatsapp"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="grupo-2">
+        <small>&copy; 2022 <b>Libros Tereré</b> - Todos los derechos reservados</small>
+      </div> -->
+      <!-- <h2 style="text-align: center;font-size: 30px;color: white;font-weight: 200;padding-top: 100px;">
+        Contacta
+      </h2> -->
+    </div>
+<!-- </div> -->
+{% endblock %}

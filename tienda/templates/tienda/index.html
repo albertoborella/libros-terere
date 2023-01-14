@@ -1,0 +1,17 @@
+{% extends 'tienda/base.html' %}
+{% load static %}
+{% block content %}
+{% include 'tienda/nav.html' %}
+<div class="bienvenida">
+    <p style="text-align: center;
+    margin-top: 60px;
+    font-size: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: underline;">
+    BIENVENIDXS!
+    </p>
+    <img src="{% static 'img/tererelibroslogo.jpg' %}" alt="" style="width: 100%;">
+</div>
+<br>
+{% endblock %}
+

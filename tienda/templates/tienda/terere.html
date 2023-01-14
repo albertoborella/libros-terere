@@ -1,0 +1,14 @@
+{% extends 'tienda/base.html' %}
+{% load static %}
+{% block title %}|Significado{% endblock %}
+{% block content %}
+{% include 'tienda/nav.html' %}
+<div class="terere">
+    {% for terere in texto%}
+        <p style="font-size: 25px;">{{terere.texto|safe}}</p>
+    {% endfor %}
+    <img src="{% static 'img/tererelibroslogo.jpg' %}" alt="" style="width: 100%;">
+</div>
+<br>
+{% include 'tienda/footer.html' %}
+{% endblock %}

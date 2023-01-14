@@ -1,0 +1,9 @@
+.nav-link{
+    font-family:'Times New Roman', Times, serif;
+    font-size: 13px;
+}
+.active{
+    font-style:italic;
+    font-weight: 900;
+    text-decoration: underline;
+}

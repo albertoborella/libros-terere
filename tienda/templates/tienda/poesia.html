@@ -1,0 +1,38 @@
+{% extends 'tienda/base.html' %}
+{% block title %}|Poesia{% endblock %}
+{% block content %}
+{% include 'tienda/nav.html' %}
+<div class="categoria-poesia">
+    <h1 style="text-align: center;
+    font-size: 50px;
+    color: white;
+    padding-top: 20px;
+    font-weight: 900;">
+     POESIA
+    </h1>
+</div>
+<div style="background-color: white;">
+    <div class="container">
+        <div class="row" style="margin: auto;">
+          <div class="col-sm-12 columnas">
+      {% for libro in libros_poesia %}
+      <section class="personas">
+          <div class="contenedor">
+            <article class="persona__columna">
+              <img src="{{libro.tapa.url}}">
+              <div class="capa">
+                <p>{{libro.titulo}}</p>
+              </div>
+            </article>
+          </div>
+          <div class="col text-center">
+            <a href="{% url 'tienda:libro' libro.id %}" class="btn btn-info btn-sm">Ver más</a>
+          </div>
+        </section>
+        {% endfor %}
+      </div>
+      </div>
+    </div>
+    <br>
+    {% include 'tienda/footer.html' %}
+{% endblock %}
